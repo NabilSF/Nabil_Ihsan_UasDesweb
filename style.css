@@ -1,16 +1,4 @@
 
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    background-color: rgb(red, green, blue);
-    color: #fff;
-}
-
 header {
     display: flex;
     justify-content: space-between;
@@ -29,6 +17,7 @@ header {
     padding: 0;
     box-sizing: border-box;
 }
+
 body {
     font-family: Arial, sans-serif;
     margin: 0;
@@ -36,26 +25,23 @@ body {
     color: #fff;
 }
 
+/* Logo styling */
 .logo {
     display: flex;
     align-items: center;
-    justify-content: center; /* Atur posisi secara horizontal */
-    margin-left: 1rem; /* Atur jarak dari kiri */
-    margin-right: auto; /* Mendorong elemen lain ke kanan */
-    height: 100%; /* Sesuaikan tinggi logo dengan header */
+    justify-content: center;
+    margin-left: 1rem;
+    margin-right: auto;
+    height: 100%;
     margin-top: 22px;
 }
 
 .logo img {
-    max-height: 150px; /* Batasi tinggi logo agar responsif */
-    width: auto; /* Jaga rasio logo */
+    max-height: 150px;
+    width: auto;
 }
 
-header.scrolled {
-    background-color: #000;
-}
-
-
+/* Gaya untuk navigasi */
 nav ul {
     list-style: none;
     display: flex;
@@ -65,10 +51,41 @@ nav ul {
 }
 
 nav a {
+    position: relative; /* Untuk posisi garis bawah */
     text-decoration: none;
     color: #fff;
-    font-size: 2rem;
+    font-size: 1.2rem;
+    transition: color 0.3s ease;
 }
+
+/* Efek hover underline */
+nav a::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -5px; /* Jarak garis bawah dari teks */
+    width: 0;
+    height: 2px;
+    background-color: #ff9800; /* Warna garis bawah */
+    transition: width 0.3s ease;
+}
+
+nav a:hover::after {
+    width: 100%; /* Animasi garis memanjang penuh */
+}
+
+nav a:hover {
+    color: #ff9800; /* Warna teks berubah saat hover */
+}
+
+/* Tambahan untuk efek scroll header */
+header.scrolled {
+    background-color: #000;
+    transition: background-color 0.3s ease;
+}
+
+
+
 /* Background Video */
 .background-video {
     position: absolute;
@@ -298,24 +315,6 @@ header.scrolled {
 }
 
 
-nav ul {
-    list-style: none;
-    display: flex;
-    gap: 1.5rem;
-    padding: 0;
-    margin: 0;
-}
-
-nav a {
-    text-decoration: none;
-    color: #fff;
-    font-size: 1rem;
-
-}
-
-nav ul a :hover{
-    color: #453f40;
-}
 
 .footer {
     background-color: #111;
