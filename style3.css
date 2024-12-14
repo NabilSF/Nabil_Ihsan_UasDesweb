@@ -13,24 +13,34 @@ body {
     padding: 2rem;
 }
 
-/* Header Styling */
+/* Gaya umum header */
 header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 2rem;
-    background-color: transparent;
+    padding: 2rem 2rem;
+    background-color: transparent; 
     position: sticky;
-    top: 0;
-    z-index: 1000;
-    transition: background-color 0.3s ease;
+    top: 0; 
+    z-index: 1000; 
+    transition: background-color 0.3s ease; 
     height: 100px;
 }
 
-header.scrolled {
-    background-color: #000;
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    background-color: #141414;
+    color: #fff;
+}
+
+/* Logo styling */
 .logo {
     display: flex;
     align-items: center;
@@ -46,7 +56,7 @@ header.scrolled {
     width: auto;
 }
 
-/* Navigation Styling */
+/* Gaya untuk navigasi */
 nav ul {
     list-style: none;
     display: flex;
@@ -56,15 +66,39 @@ nav ul {
 }
 
 nav a {
+    position: relative; 
     text-decoration: none;
     color: #fff;
-    font-size: 1rem;
-    transition: color 0.3s;
+    font-size: 1.2rem;
+    transition: color 0.3s ease;
+}
+
+/* Efek hover underline */
+nav a::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -5px;
+    width: 0;
+    height: 2px;
+    background-color: #ff9800; 
+    transition: width 0.3s ease;
+}
+
+nav a:hover::after {
+    width: 100%;
 }
 
 nav a:hover {
-    color: #453f40;
+    color: #ff9800; 
 }
+
+/* Tambahan untuk efek scroll header */
+header.scrolled {
+    background-color: #000;
+    transition: background-color 0.3s ease;
+}
+
 
 /* Section Title */
 h1 {
